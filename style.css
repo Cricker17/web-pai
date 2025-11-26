@@ -1,0 +1,87 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Glassmorphism */
+.glass-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Soft gold glow */
+.profile-card:hover {
+    box-shadow: 0 0 20px rgba(193, 154, 107, 0.4);
+}
+
+/* 3D Parallax Hover */
+.profile-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.profile-card:hover {
+    transform: translateY(-6px) rotate3d(1,1,0,6deg);
+}
+
+/* Animated Islamic Pattern */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('assets/pattern.png');
+    background-size: 300px;
+    opacity: 0.06;
+    animation: shimmer 40s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0% { background-position: 0 0; }
+    100% { background-position: 1000px 1000px; }
+}
+
+/* Modal Animation */
+#modal.show #modal-content {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.expand-section {
+    overflow: hidden;
+    opacity: 0;
+    max-height: 0;
+    transition: all 0.5s ease;
+}
+
+.expand-section.open {
+    opacity: 1;
+    max-height: 500px;
+}
+
+    /* Scrollbar container */
+    #timeline .custom-scroll::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Scrollbar track */
+    #timeline .custom-scroll::-webkit-scrollbar-track {
+        background: #f0e8df;
+        border-radius: 10px;
+    }
+
+    /* Scrollbar thumb */
+    #timeline .custom-scroll::-webkit-scrollbar-thumb {
+        background: #C19A6B;
+        border-radius: 10px;
+        border: 2px solid #f0e8df;
+    }
+
+    /* Hover effect */
+    #timeline .custom-scroll::-webkit-scrollbar-thumb:hover {
+        background: #a57f53;
+    }

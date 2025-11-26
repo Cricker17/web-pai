@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html class="transition duration-500 dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic History Blog – Muhammad Iqbal & Qasim Amin</title>
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-[#F9F7F3] text-[#0F3D3E]">
+
+    <!-- Navbar -->
+    <nav class="w-full py-4 px-10 bg-[#0F3D3E] text-white flex justify-between items-center shadow-lg">
+        <h1 class="text-2xl font-semibold">Islamic History Blog</h1>
+        <ul class="flex gap-6">
+            <li><a href="#about" class="hover:text-[#C19A6B] transition">About</a></li>
+            <li><a href="#articles" class="hover:text-[#C19A6B] transition">Articles</a></li>
+            <li><a href="#timeline" class="hover:text-[#C19A6B] transition">Timeline</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[75vh] flex items-center justify-center text-center text-white"
+        style="background-image: url('assets/hero-bg.jpg'); background-size: cover; background-position: center;">
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+
+        <div class="relative z-10 px-10">
+            <h2 id="hero-title" class="text-5xl font-[Playfair Display] mb-4 opacity-0">
+                Perjalanan Intelektual Reformasi Islam
+            </h2>
+
+            <p id="hero-subtitle" class="text-lg opacity-0">
+                Menelusuri pemikiran, gagasan, dan warisan dua tokoh besar dunia Islam.
+            </p>
+
+            <button id="hero-button" onclick="scrollToSection('articles')"
+                class="mt-6 bg-white/30 text-white font-semibold px-6 py-2 rounded-full backdrop-blur-md border border-white/40 hover:bg-white/50 opacity-0">
+                Mulai
+            </button>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="px-10 py-20 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-[Playfair Display] mb-10" data-aos="fade-up">
+            About the Thinkers
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+            <!-- Muhammad Iqbal Card -->
+            <div class="profile-card bg-white shadow-xl rounded-xl p-6 cursor-pointer hover:shadow-2xl transition transform hover:-translate-y-1"
+                data-aos="fade-right" onclick="openModal('iqbal')">
+                <img src="assets/iqbal.jpg" class="rounded-lg mb-4 shadow-md">
+                <h3 class="text-2xl font-semibold mb-2">Muhammad Iqbal</h3>
+                <p class="text-[#0F3D3E]/80 leading-relaxed">
+                    Seorang pemikir yang menghidupkan kembali kesadaran spiritual dan intelektual dalam dunia Islam.
+                    <span class="text-[#C19A6B] font-semibold underline ml-1">Lihat selengkapnya →</span>
+                </p>
+
+            </div>
+
+            <!-- Qasim Amin Card -->
+            <div class="profile-card bg-white shadow-xl rounded-xl p-6 cursor-pointer hover:shadow-2xl transition transform hover:-translate-y-1"
+                data-aos="fade-left" onclick="openModal('amin')">
+                <img src="assets/qasim-amin.jpg" class="rounded-lg mb-4 shadow-md">
+                <h3 class="text-2xl font-semibold mb-2">Qasim Amin</h3>
+                <p class="text-[#0F3D3E]/80 leading-relaxed">
+                    Tokoh pembaruan sosial yang membuka jalan bagi pendidikan dan hak perempuan di dunia Arab.
+                    <span class="text-[#C19A6B] font-semibold underline ml-1">Lihat selengkapnya →</span>
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Articles Section -->
+    <section id="articles" class="bg-[#E8DCC4] py-20 px-10">
+        <h2 class="text-3xl font-[Playfair Display] text-center mb-10" data-aos="fade-up">
+            Featured Articles
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+            <!-- CARD 1 -->
+            <div class="article-card bg-white p-6 rounded-xl shadow cursor-pointer"
+                onclick="toggleExpand(event, 'expand_iqbal')" data-aos="fade-right">
+
+                <h3 class="text-2xl font-bold">Iqbal’s Philosophy of Selfhood</h3>
+                <p class="mt-2 text-sm">Mengenal bagaimana konsep <strong>Khudi</strong> membentuk perubahan diri dan
+                    masyarakat...</p>
+
+                <!-- EXPAND 1 -->
+                <div id="expand_iqbal" class="expand-section hidden mt-4">
+                    <p class="text-sm leading-relaxed">
+                        Iqbal melihat <strong>Khudi</strong> sebagai dasar pembentukan jati diri. Menurutnya, manusia
+                        diajak untuk
+                        bangkit,
+                        menyadari potensi diri, dan menjalani hidup dengan tujuan yang jelas. Konsep ini menekankan
+                        keberanian
+                        berpikir serta peran aktif manusia dalam membangun peradaban.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="article-card bg-white p-6 rounded-xl shadow cursor-pointer"
+                onclick="toggleExpand(event, 'expand_amin')" data-aos="fade-left">
+
+                <h3 class="text-2xl font-bold">Qasim Amin & Women’s Rights</h3>
+                <p class="mt-2 text-sm">Melihat lebih dekat gagasan pembaruan yang ia bawa...</p>
+
+                <!-- EXPAND 2 -->
+                <div id="expand_amin" class="expand-section hidden mt-4">
+                    <p class="text-sm leading-relaxed">
+                        Amin menekankan pentingnya pendidikan dan penghargaan terhadap martabat perempuan sebagai kunci
+                        kemajuan
+                        masyarakat. Ia meyakini bahwa sebuah bangsa tidak akan maju jika separuh warganya tidak diberi
+                        ruang untuk
+                        berkembang.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="article-card bg-white p-6 rounded-xl shadow cursor-pointer"
+                onclick="toggleExpand(event, 'expand_reform')" data-aos="fade-right">
+
+                <h3 class="text-2xl font-bold">Islamic Modern Reform Movement</h3>
+                <p class="mt-2 text-sm">Bagaimana arus pemikiran ini membentuk wajah modernitas Islam...</p>
+
+                <!-- EXPAND 3 -->
+                <div id="expand_reform" class="expand-section hidden mt-4">
+                    <p class="text-sm leading-relaxed">
+                        Gerakan reformasi modern berupaya menyelaraskan ajaran Islam dengan ilmu pengetahuan, pemikiran
+                        rasional,
+                        dan tantangan zaman. Para tokohnya mendorong pembaruan yang tetap berpijak pada nilai-nilai
+                        Islam namun
+                        relevan dengan dunia modern.
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <!-- Timeline (Gabungan Lama + Baru) -->
+    <section id="timeline" class="px-10 py-20 max-w-5xl mx-auto">
+        <h2 class="text-3xl font-[Playfair Display] mb-10 text-center" data-aos="fade-up">
+            Timeline of Their Ideas
+        </h2>
+
+        <!-- Scroll -->
+        <div class="border-l-4 border-[#C19A6B] pl-6 space-y-10 max-h-[500px] overflow-y-auto pr-4 custom-scroll">
+
+            <!-- Timeline Lama -->
+            <div data-aos="fade-right">
+                <h3 class="font-bold text-xl">1877 – Kelahiran Muhammad Iqbal</h3>
+                <p class="text-[#0F3D3E]/70">Lahir di Sialkot, Iqbal tumbuh dalam lingkungan yang mendorong pemikiran
+                    dan spiritualitas.</p>
+            </div>
+
+            <div data-aos="fade-right">
+                <h3 class="font-bold text-xl">1879 – Kelahiran Qasim Amin</h3>
+                <p class="text-[#0F3D3E]/70">Amin lahir di Alexandria dan besar dalam tradisi intelektual Arab.</p>
+            </div>
+
+            <div data-aos="fade-right">
+                <h3 class="font-bold text-xl">1899 – “Tahrir al-Mar’a” oleh Qasim Amin</h3>
+                <p class="text-[#0F3D3E]/70">Buku pertama Amin yang membahas pendidikan dan pembebasan perempuan.</p>
+            </div>
+
+            <div data-aos="fade-right">
+                <h3 class="font-bold text-xl">1899–1900 – Karya Reformasi Amin</h3>
+                <p class="text-[#0F3D3E]/70">Tulisan-tulisannya membuka diskusi besar tentang pendidikan dan peran
+                    perempuan.</p>
+            </div>
+
+            <div data-aos="fade-right">
+                <h3 class="font-bold text-xl">1901 – “Al-Mar’a al-Jadida”</h3>
+                <p class="text-[#0F3D3E]/70">Karya lanjutan Amin yang memperkuat gagasannya tentang reformasi sosial.
+                </p>
+            </div>
+
+            <div data-aos="fade-right">
+                <h3 class="font-bold text-xl">1905 – Iqbal Belajar di Eropa</h3>
+                <p class="text-[#0F3D3E]/70">Perjalanannya ke Inggris dan Jerman memperluas horizon pemikirannya.</p>
+            </div>
+
+            <div data-aos="fade-right">
+                <h3 class="font-bold text-xl">1908 – Wafatnya Qasim Amin</h3>
+                <p class="text-[#0F3D3E]/70"> Amin wafat di Kairo, tetapi gagasannya tentang pendidikan dan peran perempuan tetap berpengaruh.</p>
+            </div>
+
+            <!-- Timeline Baru -->
+            <div data-aos="fade-right">
+                <h3 class="font-bold text-xl">1910 – Awal Konsep Khudi</h3>
+                <p class="text-[#0F3D3E]/70">Iqbal mulai merumuskan gagasan Khudi sebagai fondasi pembangunan diri
+                    manusia.</p>
+            </div>
+
+            <div data-aos="fade-right">
+                <h3 class="font-bold text-xl">1923 – Rekonstruksi Pemikiran Islam</h3>
+                <p class="text-[#0F3D3E]/70">Karya penting Iqbal yang menawarkan cara pandang baru terhadap pemikiran
+                    Islam modern.</p>
+            </div>
+
+            <div data-aos="fade-right">
+                <h3 class="font-bold text-xl">1938 – Wafatnya Muhammad Iqbal</h3>
+                <p class="text-[#0F3D3E]/70">Warisan pemikirannya tetap hidup dalam dunia pemikiran Islam hingga kini.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer
+        class="mt-20 bg-[#0F3D3E] dark:bg-[#0A2A2A] text-white py-12 relative overflow-hidden transition duration-500">
+
+        <!-- Floating Ornament Animation -->
+        <div class="absolute top-10 left-10 opacity-10 animate-spin-slow">
+            <img src="pattern.png" class="w-40">
+        </div>
+
+        <div class="absolute bottom-10 right-10 opacity-10 animate-pulse">
+            <img src="pattern.png" class="w-32">
+        </div>
+
+        <!-- Pattern Overlay -->
+        <div class="absolute inset-0 opacity-10 dark:opacity-20"
+            style="background-image: url('pattern.png'); background-size: 500px; background-repeat: repeat;">
+        </div>
+
+        <div class="relative container mx-auto px-6">
+
+            <!-- Ornament Divider -->
+            <div class="flex justify-center mb-6">
+                <div class="h-[2px] w-44 bg-gradient-to-r from-transparent via-[#C19A6B] to-transparent"></div>
+            </div>
+
+            <!-- Title -->
+            <h2 class="text-3xl font-bold text-center tracking-wider mb-3 dark:text-[#E8DCC4]">
+                Islamic History Blog
+            </h2>
+
+            <p class="text-center text-gray-300 dark:text-gray-400 max-w-xl mx-auto mb-8">
+                Ruang belajar yang menghadirkan kembali pemikiran dan perjalanan tokoh-tokoh pembaruan Islam.
+            </p>
+
+            <!-- Author Names -->
+            <div class="text-center mb-10" data-aos="fade-up">
+                <p class="text-gray-300 mb-2">Created by:</p>
+
+                <div class="flex justify-center gap-4">
+                    <span
+                        class="px-4 py-2 rounded-lg bg-white/10 border border-white/20 hover:bg-white/20 transition cursor-default">
+                        <strong>9 - Ardiansyah</strong>
+                    </span>
+
+
+                </div>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="flex justify-center gap-6 mb-10" data-aos="zoom-in">
+
+                <!-- Instagram -->
+                <a href="#" class="hover:text-[#C19A6B] transition">
+                    <svg width="32" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M7 2C4 2 2 4 2 7v10c0 3 2 5 5 5h10c3 0 5-2 5-5V7c0-3-2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A4.5 4.5 0 1112 17a4.5 4.5 0 010-9zm0 2A2.5 2.5 0 1014.5 12 2.5 2.5 0 0012 9.5zm4.8-.8a1.2 1.2 0 11-1.2-1.2 1.2 1.2 0 011.2 1.2z" />
+                    </svg>
+                </a>
+
+                <!-- YouTube -->
+                <a href="#" class="hover:text-[#C19A6B] transition">
+                    <svg width="36" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M23.5 6.2s-.2-1.7-.8-2.4c-.8-.9-1.7-.9-2.1-1C17.4 2.5 12 2.5 12 2.5h-.1s-5.4 0-8.6.3c-.4.1-1.3.1-2.1 1C.7 4.5.5 6.2.5 6.2S0 8.3 0 10.4v1.9c0 2.1.5 4.2.5 4.2s.2 1.7.8 2.4c.8.9 1.9.9 2.3 1 1.7.2 7.2.3 7.2.3s5.4 0 8.6-.3c.4-.1 1.3-.1 2.1-1 .6-.7.8-2.4.8-2.4s.5-2.1.5-4.2v-1.9c0-2.1-.5-4.2-.5-4.2zM9.8 15.3V8.7l6.3 3.3-6.3 3.3z" />
+                    </svg>
+                </a>
+
+                <!-- Twitter / X -->
+                <a href="#" class="hover:text-[#C19A6B] transition">
+                    <svg width="30" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M18.9 2H22l-7.4 8.4L23.3 22h-6.5l-5.1-6.6L5.8 22H2.7l7.9-8.9L1.5 2h6.6l4.6 6.1L18.9 2zm-2.3 17.8h1.2L7.5 4.1H6.2l10.4 15.7z" />
+                    </svg>
+                </a>
+
+            </div>
+
+            <div class="flex justify-center">
+                <div class="h-[2px] w-32 bg-gradient-to-r from-transparent via-[#C19A6B] to-transparent"></div>
+            </div>
+
+            <p class="text-center text-gray-400 mt-6 text-sm">
+                © 2025 Islamic History Blog — All Rights Reserved
+            </p>
+
+        </div>
+    </footer>
+
+    <style>
+        .animate-spin-slow {
+            animation: spin 18s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-black/60 hidden flex justify-center items-center p-4 z-50">
+        <div id="modal-content"
+            class="glass-card rounded-xl max-w-2xl w-full p-8 opacity-0 transform scale-90 transition">
+
+            <button onclick="closeModal()" class="float-right text-xl text-[#0F3D3E] hover:text-[#C19A6B]">✕</button>
+
+            <div id="modal-body" class="text-[#0F3D3E] mt-6"></div>
+        </div>
+    </div>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
